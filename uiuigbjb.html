@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input[type="text"] {
+            padding: 5px;
+            font-size: 16px;
+        }
+        p {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        nav {
+            background-color: #f2f2f2;
+            padding: 10px;
+            display: flex;
+            justify-content: space-around;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#">File</a>
+        <a href="#">Edit</a>
+        <a href="#">Run</a>
+        <a href="#">About us</a>
+    </nav>
+    <h2>Input string:</h2>
+    <input type="text" id="inputString" placeholder="Enter a string...">
+    <p id="message"></p>
+
+    <script>
+        const inputField = document.getElementById('inputString');
+        const messageElement = document.getElementById('message');
+
+        inputField.addEventListener('input', function() {
+            const inputValue = inputField.value;
+            const isNumber = !isNaN(inputValue);
+            messageElement.textContent = isNumber ? 'Yes, it is a number' : 'No, it is not a number';
+        });
+    </script>
+</body>
+</html>
